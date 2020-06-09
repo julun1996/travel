@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <style>
+        label {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<form action="127.0.0.1:8000/v1/users" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="username">用户名:</label>
+        <input type="text" name="username">
+    </div>
+    <div>
+        <label for="password">密码:</label>
+        <input type="password" name="password1">
+    </div>
+    <div>
+        <label for="ppassword2">重复密码:</label>
+        <input type="password" name="password2">
+    </div>
+    <div>
+        <label for="eamil">邮箱:</label>
+        <input type="text" name="email">
+    </div>
+    <div>
+        <input type="radio" name="usertype" value="1" checked>个人
+        <input type="radio" name="usertype" value="2">酒店入驻
+        <input type="radio" name="usertype" value="3">景点入驻
+    </div>
+    <div>
+        <input type="submit" value="提交">
+    </div>
+</form>
+</body>
+
+</html>

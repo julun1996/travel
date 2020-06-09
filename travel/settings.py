@@ -37,20 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'hotel',
     'user',
     'commodity',
     'store',
     'tour',
     'introduction',
-    'hotel',
     'community',
+    'tokens'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -153,3 +156,4 @@ CORS_ALLOW_HEADERS = (
 MEDIA_URL='/media/'
 #尽管如此,需要告诉django,具体的文件夹路径到底是哪里,所以下面写的是文件夹的绝对路径
 MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
+
